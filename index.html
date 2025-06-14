@@ -2,57 +2,50 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Stark Rádio URL</title>
+  <title>Stark Músicas para SA-MP</title>
   <style>
     body {
-      font-family: sans-serif;
-      background: #121212;
-      color: white;
+      font-family: Arial, sans-serif;
+      background-color: #101010;
+      color: #ffffff;
       text-align: center;
-      padding: 40px;
+      padding: 20px;
     }
-    input, button {
-      padding: 10px;
-      font-size: 16px;
-      width: 80%;
-      margin-top: 10px;
-    }
-    .output {
-      margin-top: 20px;
-      background: #1f1f1f;
+    .musica {
+      margin: 20px 0;
       padding: 15px;
-      border-radius: 8px;
-      word-break: break-word;
+      background: #1e1e1e;
+      border-radius: 10px;
+    }
+    code {
+      color: #00ffcc;
+      background: #333;
+      padding: 4px 6px;
+      border-radius: 4px;
+    }
+    audio {
+      width: 90%;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>🎵 Sistema de Som Automotivo - Stark</h1>
-  <p>Cole abaixo o link da sua música (.mp3 direto):</p>
-  <input type="text" id="url" placeholder="https://exemplo.com/musica.mp3" />
-  <br>
-  <button onclick="gerar()">Gerar URL para o SA-MP</button>
+  <h1>🎶 Músicas para Som Automotivo SA-MP</h1>
 
-  <div class="output" id="resultado" style="display:none;"></div>
+  <div class="musica">
+    <h3>Musica 1</h3>
+    <p>URL para usar no /tocarsom:</p>
+    <code>https://SEU_USUARIO.github.io/stark-musicas/musicas/musica1.mp3</code>
+    <br>
+    <audio controls src="musicas/musica1.mp3"></audio>
+  </div>
 
-  <script>
-    function gerar() {
-      const url = document.getElementById('url').value;
-      const result = document.getElementById('resultado');
-
-      if (!url.startsWith("http")) {
-        result.innerHTML = "❌ URL inválida! A URL deve começar com http ou https.";
-        result.style.display = "block";
-        return;
-      }
-
-      result.innerHTML = `
-        ✅ URL gerada!<br>
-        Copie e use o comando no seu servidor:<br><br>
-        <code>/tocarsom ${url}</code>
-      `;
-      result.style.display = "block";
-    }
-  </script>
+  <div class="musica">
+    <h3>Intro Samp</h3>
+    <p>Use no seu servidor:</p>
+    <code>https://SEU_USUARIO.github.io/stark-musicas/musicas/intro_samp.mp3</code>
+    <br>
+    <audio controls src="musicas/intro_samp.mp3"></audio>
+  </div>
 </body>
-    </html>
+</html>
