@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Stark Rádio URL</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #121212;
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      margin-top: 10px;
+    }
+    .output {
+      margin-top: 20px;
+      background: #1f1f1f;
+      padding: 15px;
+      border-radius: 8px;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎵 Sistema de Som Automotivo - Stark</h1>
+  <p>Cole abaixo o link da sua música (.mp3 direto):</p>
+  <input type="text" id="url" placeholder="https://exemplo.com/musica.mp3" />
+  <br>
+  <button onclick="gerar()">Gerar URL para o SA-MP</button>
+
+  <div class="output" id="resultado" style="display:none;"></div>
+
+  <script>
+    function gerar() {
+      const url = document.getElementById('url').value;
+      const result = document.getElementById('resultado');
+
+      if (!url.startsWith("http")) {
+        result.innerHTML = "❌ URL inválida! A URL deve começar com http ou https.";
+        result.style.display = "block";
+        return;
+      }
+
+      result.innerHTML = `
+        ✅ URL gerada!<br>
+        Copie e use o comando no seu servidor:<br><br>
+        <code>/tocarsom ${url}</code>
+      `;
+      result.style.display = "block";
+    }
+  </script>
+</body>
+    </html>
